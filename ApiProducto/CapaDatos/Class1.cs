@@ -2,7 +2,7 @@
 
 namespace CapaDatos
 {
-    public class Class1
+    public class ContexProducto
     {
     }
 }
