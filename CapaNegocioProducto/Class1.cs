@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DatosLibreria
+namespace CapaNegocioProducto
 {
     public class Class1
     {

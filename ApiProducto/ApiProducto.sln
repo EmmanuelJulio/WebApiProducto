@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29209.62
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dato", "Dato", "{AFF6AFBF-3B7E-4782-9C13-CF74900CBE34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProducto", "ApiProducto.csproj", "{EE241FC8-2D43-4DE8-87F6-0B9A93970F04}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Negocio", "Negocio", "{41FF1F3C-8F73-463B-815E-11FDC88E25B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocioProductos", "..\CapaNegocioProductos\CapaNegocioProductos.csproj", "{6B18F7D9-645A-4B6B-960E-F334AEC34265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiProducto", "WebApiProducto\WebApiProducto.csproj", "{4FA7A653-BA08-4781-AEAE-54DE3A7C9E67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatosProductos", "..\CapaDatosProductos\CapaDatosProductos.csproj", "{9C7D328C-29AC-4B94-820B-DD6006A21BC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatosLibreria", "DatosLibreria\DatosLibreria.csproj", "{1FD1BC57-B143-4CC1-92C2-A4A7E8481793}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Negocio", "Negocio", "{EE237BFD-F5B5-4AB6-8A12-C046EFE4C155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion", "Aplicacion", "{FDF761F6-5702-4915-BD61-DC75FED81DC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datos", "Datos", "{4AC03A74-E19B-4365-A99D-3478563E7C17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +21,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4FA7A653-BA08-4781-AEAE-54DE3A7C9E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FA7A653-BA08-4781-AEAE-54DE3A7C9E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FA7A653-BA08-4781-AEAE-54DE3A7C9E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FA7A653-BA08-4781-AEAE-54DE3A7C9E67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FD1BC57-B143-4CC1-92C2-A4A7E8481793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FD1BC57-B143-4CC1-92C2-A4A7E8481793}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FD1BC57-B143-4CC1-92C2-A4A7E8481793}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FD1BC57-B143-4CC1-92C2-A4A7E8481793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE241FC8-2D43-4DE8-87F6-0B9A93970F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE241FC8-2D43-4DE8-87F6-0B9A93970F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE241FC8-2D43-4DE8-87F6-0B9A93970F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE241FC8-2D43-4DE8-87F6-0B9A93970F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B18F7D9-645A-4B6B-960E-F334AEC34265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B18F7D9-645A-4B6B-960E-F334AEC34265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B18F7D9-645A-4B6B-960E-F334AEC34265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B18F7D9-645A-4B6B-960E-F334AEC34265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7D328C-29AC-4B94-820B-DD6006A21BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7D328C-29AC-4B94-820B-DD6006A21BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7D328C-29AC-4B94-820B-DD6006A21BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7D328C-29AC-4B94-820B-DD6006A21BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1FD1BC57-B143-4CC1-92C2-A4A7E8481793} = {AFF6AFBF-3B7E-4782-9C13-CF74900CBE34}
+		{6B18F7D9-645A-4B6B-960E-F334AEC34265} = {EE237BFD-F5B5-4AB6-8A12-C046EFE4C155}
+		{9C7D328C-29AC-4B94-820B-DD6006A21BC9} = {4AC03A74-E19B-4365-A99D-3478563E7C17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EEB575BD-1275-4B88-A59B-A8A99BAABA5B}
+		SolutionGuid = {82A1FFE1-A5CC-4682-BF24-E248C17054CE}
 	EndGlobalSection
 EndGlobal
