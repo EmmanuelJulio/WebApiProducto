@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace API_Producto
 {
@@ -26,6 +28,8 @@ namespace API_Producto
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            var conectionString = Configuration.GetSection("ConnectionStrin").Value;
+            services.AddDbContext<API_CAPA_DATO.DatoDbContext>(Options => Options.UseSqlServer(conectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
