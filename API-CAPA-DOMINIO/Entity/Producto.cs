@@ -20,5 +20,7 @@ namespace API_CAPA_DOMINIO.Entity
         public string Marca { get => marca; set => marca = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public decimal Precio { get => precio; set => precio = value; }
+        public int Id { get => id; set => id = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
     }
 }

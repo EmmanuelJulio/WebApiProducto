@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CapaAccesoDatosProductos;
+using CapaAccesoDatosProductos.Comandos;
+using CapaAplicacionProductos.Servicios;
+using CapaDominioProductos.Comandos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,8 +32,11 @@ namespace API_Producto
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            var conectionString = Configuration.GetSection("ConnectionStrin").Value;
-            services.AddDbContext<API_CAPA_DATO.DatoDbContext>(Options => Options.UseSqlServer(conectionString));
+            var connectionString = Configuration.GetSection("ConnectionString").Value;
+            services.AddDbContext<Contexto>(opciones => opciones.UseSqlServer(connectionString));
+            services.AddTransient<IGenericsRepository, GenericsRepository>();
+            services.AddTransient<IProductoService, ProductoServicio>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
