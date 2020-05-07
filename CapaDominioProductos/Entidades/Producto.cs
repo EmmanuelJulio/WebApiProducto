@@ -14,7 +14,7 @@ namespace CapaDominioProductos.Entidades
         private int precioID;
         private int imagenID;
         private int categoriaID;
-        private string marcaID;
+        private int marcaID;
         private int stock;
 
         public int ProductoID { get => productoID; set => productoID = value; }
@@ -23,7 +23,7 @@ namespace CapaDominioProductos.Entidades
         public int PrecioID { get => precioID; set => precioID = value; }
         public int ImagenID { get => imagenID; set => imagenID = value; }
         public int CategoriaID { get => categoriaID; set => categoriaID = value; }
-        public string MarcaID { get => marcaID; set => marcaID = value; }
+       
         public int Stock { get => stock; set => stock = value; }
 
 
@@ -32,5 +32,6 @@ namespace CapaDominioProductos.Entidades
         public virtual CategoriaProducto CategoriaProductoNavigator { get; set; }
 
         public virtual Marca MarcaNavigator { get; set; }
+        public int MarcaID { get => marcaID; set => marcaID = value; }
     }
 }

@@ -28,10 +28,14 @@ namespace CapaAplicacionProductos.Servicios
             var entity = new Producto()
             {
 
-                //Descripcion = producto.Descripcion,
-                //Marca = producto.Marca,
-                //Precio = producto.Precio,
-                //Nombre = producto.Nombre
+                Descripcion = producto.Descripcion,
+                MarcaID = producto.MarcaID,
+                PrecioID = producto.PrecioID,
+                Nombre = producto.Nombre,
+                ImagenID=producto.ImagenID,
+                CategoriaID=producto.CategoriaID
+
+                
 
             };
             repository.Agregar<Producto>(entity);

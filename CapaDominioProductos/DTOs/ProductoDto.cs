@@ -11,7 +11,7 @@ namespace CapaDominioProductos.DTOs
         private int precioID;
         private int imagenID;
         private int categoriaID;
-        private string marca;
+        private int marcaID;
         private int stock;
 
         public string Nombre { get => nombre; set => nombre = value; }
@@ -19,10 +19,8 @@ namespace CapaDominioProductos.DTOs
         public int PrecioID { get => precioID; set => precioID = value; }
         public int ImagenID { get => imagenID; set => imagenID = value; }
         public int CategoriaID { get => categoriaID; set => categoriaID = value; }
-        public string Marca { get => marca; set => marca = value; }
+        
         public int Stock { get => stock; set => stock = value; }
-
-
-
+        public int MarcaID { get => marcaID; set => marcaID = value; }
     }
 }
