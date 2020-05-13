@@ -20,6 +20,12 @@ namespace CapaAccesoDatosProductos.Comandos
             contexto.SaveChanges();
         }
 
+        public void Delete<T>(T entity) where T : class
+        {
+            contexto.Set<T>().Remove(entity);
+            contexto.SaveChanges();
+        }
+
         public T GetBy<T>(int id) where T : class
         {
             DbSet<T> table = contexto.Set<T>();

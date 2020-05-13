@@ -48,6 +48,9 @@ namespace API_Producto
             });
             services.AddTransient<IGenericsRepository, GenericsRepository>();
             services.AddTransient<IProductoService, ProductoServicio>();
+            services.AddTransient<IPrecioProductoService, PrecioProductoService>();
+            services.AddTransient<IMarcaService, MarcaService>();
+            services.AddTransient<IimagenProductoService, ImagenProductoService>();
             services.AddTransient<IProductoQuery, ProductoQuery>();
 
         }

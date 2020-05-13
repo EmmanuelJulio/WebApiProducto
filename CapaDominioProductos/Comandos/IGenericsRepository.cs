@@ -8,6 +8,7 @@ namespace CapaDominioProductos.Comandos
     {
         void Agregar<T>(T entity) where T : class;
         T GetBy<T>(int id) where T : class;
+        void Delete<T>(T entity) where T : class;
 
     }
 }

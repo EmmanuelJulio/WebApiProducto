@@ -13,7 +13,7 @@ namespace CapaAplicacionProductos.Servicios
     {
         ProductoDto createProducto(int imagen, int precioproducto, int categoria, int marca, string nombre, string descripcion, int stock);
         List<ProductoDto> BusquedaProducto(int precio);
-
+        Producto EliminarProducto(ProductoDto producto);
         List<ProductoDto> GetAllProducto();
 
     }
@@ -67,6 +67,24 @@ namespace CapaAplicacionProductos.Servicios
 
 
 
+        }
+
+        public Producto EliminarProducto(ProductoDto producto)
+        {
+            var entity = new Producto()
+            {
+                ProductoID  = producto.ProductoID,
+                CategoriaID = producto.CategoriaID,
+                Nombre = producto.Nombre ,
+                Descripcion = producto.Descripcion,
+                PrecioID = producto.PrecioID,
+                ImagenID = producto.ImagenID,
+                MarcaID =  producto.MarcaID,
+                Stock = producto.Stock
+                
+            };
+            repository.Delete<Producto>(entity);
+            return entity;
         }
 
         public List<ProductoDto> GetAllProducto()

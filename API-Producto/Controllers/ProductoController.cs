@@ -68,5 +68,19 @@ namespace API_Producto.Controllers
 
             }
         }
+        [HttpDelete("DeleteProducto")]
+        public IActionResult DeleteProducto(ProductoDto producto)
+        {
+            try
+            {
+                return new JsonResult(servicio.EliminarProducto(producto)) { StatusCode = 200 };
+
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
     }
 }
