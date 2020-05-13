@@ -1,16 +1,20 @@
 ﻿using CapaDominioProductos.Comandos;
 using CapaDominioProductos.DTOs;
 using CapaDominioProductos.Entidades;
+using CapaDominioProductos.Querys;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace CapaAplicacionProductos.Servicios
 {
     public interface IProductoService
     {
-        Producto createProducto(ProductoDto producto);
-        Producto BusquedaProducto(int precio);
+        ProductoDto createProducto(int imagen, int precioproducto, int categoria, int marca, string nombre, string descripcion, int stock);
+        List<ProductoDto> BusquedaProducto(int precio);
+
+        List<ProductoDto> GetAllProducto();
 
     }
     public class ProductoServicio: IProductoService
@@ -18,48 +22,56 @@ namespace CapaAplicacionProductos.Servicios
 
 
         private readonly IGenericsRepository repository;
+        private readonly IProductoQuery _Query;
 
-
-        public ProductoServicio(IGenericsRepository repository)
+        public ProductoServicio(IGenericsRepository repository,IProductoQuery query)
         {
             this.repository = repository;
+            _Query = query;
         }
 
 
-        public Producto BusquedaProducto(int precio)
+        public List<ProductoDto> BusquedaProducto(int precio)
         {
-            var busqueda = repository.GetBy<Producto>(precio);
-            return busqueda;
+            return _Query.BusquedaProducto(precio);
         }
 
-        public Producto createProducto(ProductoDto producto)
+        public ProductoDto createProducto(int imagen, int precioproducto, int categoria, int marca,string nombre,string descripcion,int stock)
         {
+            var ImagenNav = repository.GetBy<ImagenProducto>(imagen);
+            var PrecioProducNav = repository.GetBy<PrecioProducto>(precioproducto);
+            var CategoriaNav = repository.GetBy<CategoriaProducto>(categoria);
+            var MarcaNav = repository.GetBy<Marca>(marca);
             var entity = new Producto()
             {
-
-                Descripcion = producto.Descripcion,
-                MarcaID = producto.MarcaID,
-                PrecioID = producto.PrecioID,
-                Nombre = producto.Nombre,
-                ImagenID=producto.ImagenID,
-                CategoriaID=producto.CategoriaID
-
-                
+                Nombre = nombre ,
+                Descripcion = descripcion,
+                PrecioID = precioproducto,
+                ImagenID = imagen,
+                CategoriaID = categoria,
+                Stock = stock,
+                MarcaID = marca ,
+                ImagenProductoNavigator = ImagenNav,
+                PrecioProductoNavigator = PrecioProducNav,
+                CategoriaProductoNavigator = CategoriaNav,
+                MarcaNavigator = MarcaNav
+             
 
             };
             repository.Agregar<Producto>(entity);
-            return entity;
+            return new ProductoDto {Nombre = entity.Nombre ,Descripcion = entity.Descripcion,PrecioID= entity.PrecioID,ImagenID = entity.ImagenID , CategoriaID = entity.CategoriaID
+            ,MarcaID = entity.MarcaID
+            ,Stock = entity.Stock
+
+            };
 
 
 
         }
 
-
-
-
-
-
-
-
+        public List<ProductoDto> GetAllProducto()
+        {
+            return _Query.GetAllProducto();
+        }
     }
 }

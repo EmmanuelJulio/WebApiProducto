@@ -22,17 +22,44 @@ namespace API_Producto.Controllers
             this.servicio = servicio;
         }
 
-        [HttpPost]
-        public Producto Post(ProductoDto producto)
+        [HttpPost("Post")]
+        public IActionResult Post([FromQuery] int imagen,int precioproducto,int categoria,int marca,string nombre,string descripcion,int stock)
         {
-            return servicio.createProducto(producto);
+            try
+            {
+                return new  JsonResult(servicio.createProducto(imagen, precioproducto, categoria, marca,nombre,descripcion,stock)) { StatusCode = 201};
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }        
         }
+
+        //busca un producto por su precio
         [HttpGet]
         public IActionResult GETSearchPrice([FromQuery] int precio)
         {
             try
             {
                 return new JsonResult(servicio.BusquedaProducto(precio)) { StatusCode = 200 };
+
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
+
+        //devuelve una lista de productos
+
+        [HttpGet("GetProducts")]
+        public IActionResult GetProducts()
+        {
+            try
+            {
+                return new JsonResult(servicio.GetAllProducto()) { StatusCode = 200 };
 
             }
             catch (System.Exception e)
