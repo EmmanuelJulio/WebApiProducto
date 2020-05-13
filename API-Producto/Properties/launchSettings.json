@@ -14,7 +14,8 @@
       "launchBrowser": true,
       "launchUrl": "Producto",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "emma"
+        "ASPNETCORE_ENVIRONMENT": "Matuu",
+        "Clave": "Valor"
       }
     },
     "API_Producto": {
