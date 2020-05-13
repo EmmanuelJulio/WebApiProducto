@@ -1,4 +1,5 @@
 ﻿using CapaDominioProductos.Comandos;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,12 @@ namespace CapaAccesoDatosProductos.Comandos
         {
             contexto.Add(entity);
             contexto.SaveChanges();
+        }
+
+        public T GetBy<T>(int id) where T : class
+        {
+            DbSet<T> table = contexto.Set<T>();
+            return table.Find(id);
         }
     }
 }

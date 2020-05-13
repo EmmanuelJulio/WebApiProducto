@@ -27,5 +27,19 @@ namespace API_Producto.Controllers
         {
             return servicio.createProducto(producto);
         }
+        [HttpGet]
+        public IActionResult GETSearchPrice([FromQuery] int precio)
+        {
+            try
+            {
+                return new JsonResult(servicio.BusquedaProducto(precio)) { StatusCode = 200 };
+
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace CapaDominioProductos.Entidades
@@ -7,6 +8,7 @@ namespace CapaDominioProductos.Entidades
     public class PrecioProducto
     {
         private int precioproductoID;
+        [Column(TypeName = "decimal(18,2)")]
         private decimal precioreal;
         private decimal precioventa;
         private DateTime fecha;

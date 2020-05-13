@@ -10,6 +10,8 @@ namespace CapaAplicacionProductos.Servicios
     public interface IProductoService
     {
         Producto createProducto(ProductoDto producto);
+        Producto BusquedaProducto(int precio);
+
     }
     public class ProductoServicio: IProductoService
     {
@@ -21,6 +23,13 @@ namespace CapaAplicacionProductos.Servicios
         public ProductoServicio(IGenericsRepository repository)
         {
             this.repository = repository;
+        }
+
+
+        public Producto BusquedaProducto(int precio)
+        {
+            var busqueda = repository.GetBy<Producto>(precio);
+            return busqueda;
         }
 
         public Producto createProducto(ProductoDto producto)

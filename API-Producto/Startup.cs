@@ -1,21 +1,26 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using CapaAccesoDatosProductos;
 using CapaAccesoDatosProductos.Comandos;
+using CapaAccesoDatosProductos.Querys;
 using CapaAplicacionProductos.Servicios;
 using CapaDominioProductos.Comandos;
+using CapaDominioProductos.Querys;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SqlKata.Compilers;
 
 namespace API_Producto
 {
@@ -33,9 +38,17 @@ namespace API_Producto
         {
             services.AddControllers();
             var connectionString = Configuration.GetSection("ConnectionString").Value;
+            //EF CORE
             services.AddDbContext<Contexto>(opciones => opciones.UseSqlServer(connectionString));
+            //SQL KATA
+            services.AddTransient<Compiler, SqlServerCompiler>();
+            services.AddTransient<IDbConnection>(b =>
+            {
+                return new SqlConnection(connectionString);
+            });
             services.AddTransient<IGenericsRepository, GenericsRepository>();
             services.AddTransient<IProductoService, ProductoServicio>();
+            services.AddTransient<IProductoQuery, ProductoQuery>();
 
         }
 
