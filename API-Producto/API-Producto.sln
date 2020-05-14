@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API-Producto", "API-Producto.csproj", "{7D8AED6C-2ACE-4F4A-BC1B-7E9A9D61C7D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDominioProductos", "..\CapaDominioProductos\CapaDominioProductos.csproj", "{6E5B8C21-D2B6-49B0-BAB3-60B389422F13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaDominioProductos", "..\CapaDominioProductos\CapaDominioProductos.csproj", "{6E5B8C21-D2B6-49B0-BAB3-60B389422F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaAccesoDatosProductos", "..\CapaAccesoDatosProductos\CapaAccesoDatosProductos.csproj", "{6813DE6B-2298-4B2F-8857-E98EF4F63115}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaAccesoDatosProductos", "..\CapaAccesoDatosProductos\CapaAccesoDatosProductos.csproj", "{6813DE6B-2298-4B2F-8857-E98EF4F63115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaAplicacionProductos", "..\CapaAplicacionProductos\CapaAplicacionProductos.csproj", "{7768EE7D-4BFD-4FFC-8BB0-5AC0854AA0B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaAplicacionProductos", "..\CapaAplicacionProductos\CapaAplicacionProductos.csproj", "{7768EE7D-4BFD-4FFC-8BB0-5AC0854AA0B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

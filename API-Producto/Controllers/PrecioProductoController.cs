@@ -19,12 +19,13 @@ namespace API_Producto.Controllers
         {
             this.servicio = servicio;
         }
+        [Route("InsertarPrecio")]
         [HttpPost]
-        public IActionResult Post([FromQuery] PrecioProductoDto precioProducto)
+        public IActionResult Post( PrecioProductoDto precioProducto)
         {
             try
             {
-                return new JsonResult(servicio.createPrecioProducto(precioProducto))) { StatusCode = 201 };
+                return new JsonResult(servicio.createPrecioProducto(precioProducto)) { StatusCode = 201 };
 
             }
             catch (Exception e)

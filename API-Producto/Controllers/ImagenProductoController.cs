@@ -18,8 +18,9 @@ namespace API_Producto.Controllers
         {
             this.servicio = servicio;
         }
+
+        [Route("InsertarImagen")]
         [HttpPost]
-        
         public IActionResult Post(string nombre)
         {
             try

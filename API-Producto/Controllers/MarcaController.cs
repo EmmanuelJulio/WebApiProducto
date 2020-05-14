@@ -19,8 +19,9 @@ namespace API_Producto.Controllers
         {
             this.servicio = servicio;
         }
+        [Route("InsertarMarca")]
         [HttpPost]
-        public IActionResult Post([FromQuery] MarcaDto marca)
+        public IActionResult Post( MarcaDto marca)
         {
             try
             {
