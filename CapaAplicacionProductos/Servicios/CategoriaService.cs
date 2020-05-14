@@ -10,7 +10,7 @@ namespace CapaAplicacionProductos.Servicios
 {
     public interface ICategoriaService
     {
-        CategoriaDto createCategoria(string nombre, string descripcion);
+        CategoriaDto createCategoria(string descripcion);
     }
     public class CategoriaService :ICategoriaService
     {
@@ -21,15 +21,15 @@ namespace CapaAplicacionProductos.Servicios
             this.repository = repository;
         }
 
-        public CategoriaDto createCategoria(string nombre, string descripcion)
+        public CategoriaDto createCategoria(string descripcion)
         {
             var entity = new Categoria()
             {
-                Nombre = nombre,
                 Descripcion = descripcion
+                
             };
             repository.Agregar<Categoria>(entity);
-            return new CategoriaDto { Nombre = entity.Nombre, Descripcion = entity.Descripcion };
+            return new CategoriaDto {Descripcion = entity.Descripcion };
         }
         
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace CapaDominioProductos.Entidades
@@ -7,12 +8,11 @@ namespace CapaDominioProductos.Entidades
     public class Categoria
     {
 
-        private int categoriaID;
-        private string nombre;
+        [Key]
+        private int id;
         private string descripcion;
 
-        public int CategoriaID { get => categoriaID; set => categoriaID = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
+        public int Id { get => id; set => id = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
     }
 }

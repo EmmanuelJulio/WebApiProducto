@@ -9,7 +9,7 @@ namespace CapaAplicacionProductos.Servicios
 {
     public interface IimagenProductoService
     {
-        ImagenProductoDto createImagenProducto(int nombre);
+        ImagenProductoDto createImagenProducto(string nombre);
     }
     public class ImagenProductoService : IimagenProductoService
     {
@@ -20,19 +20,20 @@ namespace CapaAplicacionProductos.Servicios
             this.repository = repository;
         }
 
-        public ImagenProductoDto createImagenProducto(int nombre)
+        public ImagenProductoDto createImagenProducto(string nombre)
         {
             var entity = new ImagenProducto()
             {
-                Nombre = nombre 
+                Nombre = nombre +".jpg" 
             };
-            repository.Agregar<ImagenProducto>(entity);
+             repository.Agregarr<ImagenProducto>(entity);
             return new ImagenProductoDto
             {
-                Nombre  = entity.Nombre
+                Nombre= nombre + ".jpg"
             };
-          
 
-        }
+
+
+         }
     }
 }

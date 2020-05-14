@@ -19,6 +19,7 @@ namespace CapaAccesoDatosProductos.Comandos
             contexto.Add(entity);
             contexto.SaveChanges();
         }
+      
 
         public void Delete<T>(T entity) where T : class
         {
@@ -30,6 +31,13 @@ namespace CapaAccesoDatosProductos.Comandos
         {
             DbSet<T> table = contexto.Set<T>();
             return table.Find(id);
+        }
+
+        T IGenericsRepository.Agregarr<T>(T entity)
+        {
+            contexto.Add(entity);
+            contexto.SaveChanges();
+            return entity;
         }
     }
 }

@@ -19,11 +19,11 @@ namespace API_Producto.Controllers
             this.service = service;
         }
         [HttpPost]
-        public IActionResult Post(string nombre, string Descripcion)
+        public IActionResult Post(string Descripcion)
         {
             try
             {
-                return new JsonResult(service.createCategoria(nombre,Descripcion)) { StatusCode = 201 };
+                return new JsonResult(service.createCategoria(Descripcion)) { StatusCode = 201 };
 
             }
             catch (Exception e)

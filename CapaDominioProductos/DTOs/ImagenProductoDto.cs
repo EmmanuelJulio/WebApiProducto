@@ -6,8 +6,8 @@ namespace CapaDominioProductos.DTOs
 {
    public  class ImagenProductoDto
     {
-        private int nombre;
+        private string nombre;
 
-        public int Nombre { get => nombre; set => nombre = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
     }
 }

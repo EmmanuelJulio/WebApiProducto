@@ -53,7 +53,7 @@ namespace CapaAplicacionProductos.Servicios
                 MarcaID = marca ,
                 ImagenProductoNavigator = ImagenNav,
                 PrecioProductoNavigator = PrecioProducNav,
-                CategoriaProductoNavigator = CategoriaNav,
+                
                 MarcaNavigator = MarcaNav
              
 

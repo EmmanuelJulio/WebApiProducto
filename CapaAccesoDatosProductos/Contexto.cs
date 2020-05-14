@@ -11,7 +11,7 @@ namespace CapaAccesoDatosProductos
 
         public DbSet<Producto> productos { get; set; }
         public DbSet<Categoria> categorias { get; set; }
-        public DbSet<CategoriaProducto> categoriasproducto { get; set; }
+ 
         public DbSet<ImagenProducto> imagenproducto { get; set; }
         public DbSet<Marca> marca { get; set; }
         public DbSet<PrecioProducto> precioproducto { get; set; }

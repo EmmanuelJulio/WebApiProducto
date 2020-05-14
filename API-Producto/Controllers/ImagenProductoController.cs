@@ -20,7 +20,7 @@ namespace API_Producto.Controllers
         }
         [HttpPost]
         
-        public IActionResult Post(int nombre)
+        public IActionResult Post(string nombre)
         {
             try
             {
