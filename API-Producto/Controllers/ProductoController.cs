@@ -51,7 +51,21 @@ namespace API_Producto.Controllers
 
             }
         }
+        /// <summary>
+        /// /////////
 
+
+
+
+            //Soy emmaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+          
+       
+        /// </summary>
+        /// 
+        /// 
+        /// 
+        /// <returns></returns>
         //devuelve una lista de productos
 
         [HttpGet("GetProducts")]
