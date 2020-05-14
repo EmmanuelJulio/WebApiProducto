@@ -19,7 +19,7 @@ namespace API_Producto.Controllers
             this.servicio = servicio;
         }
         [HttpPost]
-        
+        ////asdadsadsadasdsadsadsasdads
         public IActionResult Post(string nombre)
         {
             try
