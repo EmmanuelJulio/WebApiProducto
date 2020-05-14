@@ -56,13 +56,13 @@ namespace API_Producto.Controllers
 
 
 
-
+            
 
 
           
        
         /// </summary>
-        /// 
+        /// hola esto tiene que funcionar correctamente lpm :c
         /// 
         /// 
         /// <returns></returns>
