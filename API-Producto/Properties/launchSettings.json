@@ -14,7 +14,7 @@
       "launchBrowser": true,
       "launchUrl": "Producto",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Matute"
+        "ASPNETCORE_ENVIRONMENT": "emma"
       },
       "sqlDebugging": false,
       "nativeDebugging": false

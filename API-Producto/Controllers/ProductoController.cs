@@ -23,11 +23,11 @@ namespace API_Producto.Controllers
         }
 
         [HttpPost("Post")]
-        public IActionResult Post([FromQuery] int imagen,int precioproducto,int categoria,int marca,string nombre,string descripcion,int stock)
+        public IActionResult Post([FromQuery] ProductoDto productoDto)
         {
             try
             {
-                return new  JsonResult(servicio.createProducto(imagen, precioproducto, categoria, marca,nombre,descripcion,stock)) { StatusCode = 201};
+                return new  JsonResult(servicio.createProducto(productoDto)) { StatusCode = 201};
 
             }
             catch (Exception e)

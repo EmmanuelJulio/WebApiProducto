@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CapaAplicacionProductos.Servicios;
+using CapaDominioProductos.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,11 +20,11 @@ namespace API_Producto.Controllers
             this.servicio = servicio;
         }
         [HttpPost]
-        public IActionResult Post([FromQuery] string nombre)
+        public IActionResult Post([FromQuery] MarcaDto marca)
         {
             try
             {
-                return new JsonResult(servicio.createMarca(nombre)) { StatusCode = 201 };
+                return new JsonResult(servicio.createMarca(marca)) { StatusCode = 201 };
 
             }
             catch (Exception e)

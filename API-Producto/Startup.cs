@@ -52,7 +52,7 @@ namespace API_Producto
             services.AddTransient<IMarcaService, MarcaService>();
             services.AddTransient<IimagenProductoService, ImagenProductoService>();
             services.AddTransient<ICategoriaService, CategoriaService>();
-            services.AddTransient<ICategoriaProductoService, CategoriaProductoService>();
+
             services.AddTransient<IProductoQuery, ProductoQuery>();
 
         }

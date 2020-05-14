@@ -11,7 +11,7 @@ namespace CapaAplicacionProductos.Servicios
 {
     public interface IProductoService
     {
-        ProductoDto createProducto(int imagen, int precioproducto, int categoria, int marca, string nombre, string descripcion, int stock);
+        ProductoDto createProducto(ProductoDto productoDto);
         List<ProductoDto> BusquedaProducto(int precio);
         Producto EliminarProducto(ProductoDto producto);
         List<ProductoDto> GetAllProducto();
@@ -36,32 +36,31 @@ namespace CapaAplicacionProductos.Servicios
             return _Query.BusquedaProducto(precio);
         }
 
-        public ProductoDto createProducto(int imagen, int precioproducto, int categoria, int marca,string nombre,string descripcion,int stock)
+        public ProductoDto createProducto(ProductoDto productoDto)
         {
-            var ImagenNav = repository.GetBy<ImagenProducto>(imagen);
-            var PrecioProducNav = repository.GetBy<PrecioProducto>(precioproducto);
-            var CategoriaNav = repository.GetBy<CategoriaProducto>(categoria);
-            var MarcaNav = repository.GetBy<Marca>(marca);
+
             var entity = new Producto()
             {
-                Nombre = nombre ,
-                Descripcion = descripcion,
-                PrecioID = precioproducto,
-                ImagenID = imagen,
-                CategoriaID = categoria,
-                Stock = stock,
-                MarcaID = marca ,
-                ImagenProductoNavigator = ImagenNav,
-                PrecioProductoNavigator = PrecioProducNav,
-                
-                MarcaNavigator = MarcaNav
-             
+                Nombre = productoDto.Nombre ,
+                Descripcion =productoDto.Descripcion ,
+                PrecioID = productoDto.PrecioID,
+                ImagenID = productoDto.ImagenID,
+                CategoriaID = productoDto.CategoriaID,
+                Stock = productoDto.Stock,
+                MarcaID = productoDto.MarcaID
+
 
             };
+
             repository.Agregar<Producto>(entity);
-            return new ProductoDto {Nombre = entity.Nombre ,Descripcion = entity.Descripcion,PrecioID= entity.PrecioID,ImagenID = entity.ImagenID , CategoriaID = entity.CategoriaID
-            ,MarcaID = entity.MarcaID
-            ,Stock = entity.Stock
+            return new ProductoDto {
+                Nombre = entity.Nombre ,
+                Descripcion = entity.Descripcion,
+                PrecioID= entity.PrecioID,
+                ImagenID = entity.ImagenID ,
+                CategoriaID = entity.CategoriaID,
+                MarcaID = entity.MarcaID,
+                Stock = entity.Stock
 
             };
 
@@ -73,7 +72,7 @@ namespace CapaAplicacionProductos.Servicios
         {
             var entity = new Producto()
             {
-                ProductoID  = producto.ProductoID,
+                
                 CategoriaID = producto.CategoriaID,
                 Nombre = producto.Nombre ,
                 Descripcion = producto.Descripcion,

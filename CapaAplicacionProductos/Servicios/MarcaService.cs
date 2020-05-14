@@ -9,7 +9,7 @@ namespace CapaAplicacionProductos.Servicios
 {
     public interface IMarcaService
     {
-        MarcaDto createMarca(string nombre);
+        Marca createMarca(MarcaDto Marca);
     }
     public class MarcaService :IMarcaService
     {
@@ -20,14 +20,14 @@ namespace CapaAplicacionProductos.Servicios
             this.repository = repository;
         }
 
-        public MarcaDto createMarca(string nombre)
+        public Marca createMarca(MarcaDto Marca)
         {
-            var entity = new Marca()
+            var oMarca = new Marca()
             {
-                Nombre = nombre
+                Nombre = Marca.Nombre
             };
-            repository.Agregar<Marca>(entity);
-            return new MarcaDto { Nombre = entity.Nombre };
+            repository.Agregar<Marca>(oMarca);
+            return oMarca;
         }
     }
 }
