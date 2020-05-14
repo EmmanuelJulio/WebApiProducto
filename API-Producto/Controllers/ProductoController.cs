@@ -51,7 +51,21 @@ namespace API_Producto.Controllers
 
             }
         }
+        /// <summary>
+        /// /////////
 
+
+
+            
+
+
+          
+       
+        /// </summary>
+        /// hola esto tiene que funcionar correctamente lpm :c
+        /// 
+        /// 
+        /// <returns></returns>
         //devuelve una lista de productos
 
         [HttpGet("GetProducts")]
