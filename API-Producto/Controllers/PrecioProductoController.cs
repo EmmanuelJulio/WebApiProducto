@@ -22,6 +22,7 @@ namespace API_Producto.Controllers
         [HttpPost]
         public IActionResult Post([FromQuery]PrecioProductoDto precio)
         {
+            //soy yo
             try
             {
                 return new JsonResult(servicio.createPrecioProducto(precio)) { StatusCode = 201 };
