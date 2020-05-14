@@ -9,7 +9,7 @@ namespace CapaAplicacionProductos.Servicios
 {
     public interface IPrecioProductoService
     {
-        PrecioProductoDto createPrecioProducto(int precioReal, int PrecioVenta);
+        PrecioProductoDto createPrecioProducto(PrecioProductoDto precioProducto);
     }
     public class PrecioProductoService : IPrecioProductoService
     {
@@ -20,12 +20,12 @@ namespace CapaAplicacionProductos.Servicios
             this.repository = repository;
         }
 
-        public PrecioProductoDto createPrecioProducto(int precioReal, int PrecioVenta)
+        public PrecioProductoDto createPrecioProducto(PrecioProductoDto precioProducto)
         {
             var entity = new PrecioProducto()
             {
-                Precioreal = precioReal,
-                Precioventa = PrecioVenta,
+                Precioreal = precioProducto.Precioreal,
+                Precioventa = precioProducto.Precioventa,
                 Fecha = DateTime.Now
                 
             };

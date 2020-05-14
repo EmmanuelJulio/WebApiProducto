@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CapaAplicacionProductos.Servicios;
+using CapaDominioProductos.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,11 +20,11 @@ namespace API_Producto.Controllers
             this.servicio = servicio;
         }
         [HttpPost]
-        public IActionResult Post([FromQuery] int precioReal,int PrecioVenta)
+        public IActionResult Post([FromQuery] PrecioProductoDto precioProducto)
         {
             try
             {
-                return new JsonResult(servicio.createPrecioProducto(precioReal,PrecioVenta)) { StatusCode = 201 };
+                return new JsonResult(servicio.createPrecioProducto(precioProducto))) { StatusCode = 201 };
 
             }
             catch (Exception e)
